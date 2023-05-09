@@ -1,0 +1,21 @@
+﻿@model GetEmployeeByIDQueryResult
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br /><br />
+    <label>Personel ID</label>
+    <input type="text" class="form-control" asp-for="EmployeeID" />
+    <br />
+    <label>Personel Adı</label>
+    <input type="text" class="form-control" asp-for="EmployeeName" />
+    <br />
+    <label>Personel Soyadı</label>
+    <input type="text" class="form-control" asp-for="EmployeeSurname" />
+    <br />
+    <label>Personel Şehiri</label>
+    <input type="text" class="form-control" asp-for="EmployeeCity" />
+    <br />
+</div>

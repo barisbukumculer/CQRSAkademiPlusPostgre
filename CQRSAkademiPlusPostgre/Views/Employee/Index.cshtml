@@ -1,0 +1,33 @@
+﻿@model List< GetEmployeeQueryResult>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Personel</th>
+            <th>Şehir</th>
+            <th>Maaş</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmployeeID</td>
+                <td>@item.EmployeeName @item.EmployeeSurname</td>
+                <td>@item.EmployeeCity</td>
+                <td>@item.EmployeeSalary</td>
+                <td><a href="/Employee/DeleteEmployee/@item.EmployeeID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Employee/UpdateEmployee/@item.EmployeeID" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Employee/DetailEmployee/@item.EmployeeID" class="btn btn-dark">Detaylar</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Employee/AddEmployee/" class="btn btn-info">Yeni Personel Girişi</a>
+</div>

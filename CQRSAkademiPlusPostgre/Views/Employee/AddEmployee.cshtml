@@ -1,0 +1,31 @@
+﻿@model CreateEmployeeCommand
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>Personel Adı</label>
+        <input type="text" class="form-control" asp-for="EmployeeName" />
+        <br />
+        <label>Personel Soyadı</label>
+        <input type="text" class="form-control" asp-for="EmployeeSurname" />
+        <br />
+        <label>Personel Yaşı</label>
+        <input type="text" class="form-control" asp-for="EmployeeAge" />
+        <br />
+        <label>Personel Maaşı</label>
+        <input type="text" class="form-control" asp-for="EmployeeSalary" />
+        <br />
+        <label>Personel Şehri</label>
+        <input type="text" class="form-control" asp-for="EmployeeCity" />
+        <br />
+        <label>Personel Unvan</label>
+        <input type="text" class="form-control" asp-for="EmployeeTitle" />
+        <br />
+        <button class="btn btn-warning">Personeli Ekle</button>
+    </form>
+</div>
