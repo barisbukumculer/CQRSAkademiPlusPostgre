@@ -1,0 +1,46 @@
+﻿@model CreateProductCommand
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" asp-for="ProductName" />
+        <br />
+        <label>Ürün Markası</label>
+        <input type="text" class="form-control" asp-for="ProductBrand" />
+        <br />
+        <label>Kategorisi</label>
+        <input type="text" class="form-control" asp-for="ProductCategory" />
+        <br />
+        <label>Fiyatı</label>
+        <input type="text" class="form-control" asp-for="ProductPrice" />
+        <br />
+        <label>Stok Miktarı</label>
+        <input type="text" class="form-control" asp-for="ProductStock" />
+        <br />
+        <label>Stok Türü</label>
+        <input type="text" class="form-control" asp-for="ProductStockType" />
+        <br />
+        <label>Tedarikçi</label>
+        <input type="text" class="form-control" asp-for="Publisher" />
+        <br />
+        <label>Barkod Numarası</label>
+        <input type="text" class="form-control" asp-for="Barcode" />
+        <br />
+        <label>Son Kullanma Tarihi</label>
+        <input type="text" class="form-control" asp-for="LastUseDate" />
+        <br />
+        <label>Vergi Miktarı</label>
+        <input type="text" class="form-control" asp-for="Tax" />
+        <br />
+        <label>Raf Yeri</label>
+        <input type="text" class="form-control" asp-for="ShelfNumber" />
+        <br />
+        <button class="btn btn-warning">Ürünü Ekle</button>
+    </form>
+</div>

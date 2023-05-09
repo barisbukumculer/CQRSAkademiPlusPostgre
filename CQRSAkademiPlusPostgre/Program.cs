@@ -1,6 +1,7 @@
 using CQRSAkademiPlusPostgre.CQRSPattern.Handlers;
 using CQRSAkademiPlusPostgre.Dal;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,12 @@ builder.Services.AddScoped<GetEmployeeByIDQueryHandler>();
 builder.Services.AddScoped<CreateEmployeeCommandHandler>();
 builder.Services.AddScoped<RemoveEmployeeCommandHandler>();
 builder.Services.AddScoped<GetEmployeeUpdateByIDQueryHandler>();
+builder.Services.AddScoped<GetProductQueryHandler>();
+builder.Services.AddScoped<GetProductByIDQueryHandler>();
+builder.Services.AddScoped<CreateProductCommandHandler>();
+builder.Services.AddScoped<RemoveProductCommandHandler>();
+builder.Services.AddScoped<GetProductUpdateByIDQueryHandler>();
+
 
 var app = builder.Build();
 
