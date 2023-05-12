@@ -12,14 +12,16 @@ namespace CQRSAkademiPlusPostgre.Controllers
         private readonly CreateEmployeeCommandHandler _createEmployeeCommandHandler;
         private readonly RemoveEmployeeCommandHandler _removeEmployeeCommandHandler;
         private readonly GetEmployeeUpdateByIDQueryHandler _getEmployeeUpdateByIDQueryHandler;
+        private readonly UpdateEmployeeCommandHandler _updateEmployeeCommandHandler;
 
-        public EmployeeController(GetEmployeeQueryHandler handler, GetEmployeeByIDQueryHandler getEmployeeByIDQueryHandler, CreateEmployeeCommandHandler createEmployeeCommandHandler, RemoveEmployeeCommandHandler removeEmployeeCommandHandler, GetEmployeeUpdateByIDQueryHandler getEmployeeUpdateByIDQueryHandler)
+        public EmployeeController(GetEmployeeQueryHandler handler, GetEmployeeByIDQueryHandler getEmployeeByIDQueryHandler, CreateEmployeeCommandHandler createEmployeeCommandHandler, RemoveEmployeeCommandHandler removeEmployeeCommandHandler, GetEmployeeUpdateByIDQueryHandler getEmployeeUpdateByIDQueryHandler, UpdateEmployeeCommandHandler updateEmployeeCommandHandler)
         {
             _handler = handler;
             _getEmployeeByIDQueryHandler = getEmployeeByIDQueryHandler;
             _createEmployeeCommandHandler = createEmployeeCommandHandler;
             _removeEmployeeCommandHandler = removeEmployeeCommandHandler;
             _getEmployeeUpdateByIDQueryHandler = getEmployeeUpdateByIDQueryHandler;
+            _updateEmployeeCommandHandler = updateEmployeeCommandHandler;
         }
 
         public IActionResult Index()
@@ -53,6 +55,12 @@ namespace CQRSAkademiPlusPostgre.Controllers
         {
             var values = _getEmployeeUpdateByIDQueryHandler.Handle(new GetEmployeeUpdateByIDQuery(id));
             return View(values);
+        }
+        [HttpPost]
+        public IActionResult UpdateEmployee(UpdateEmployeeCommand command)
+        {
+            _updateEmployeeCommandHandler.Handle(command);
+            return RedirectToAction("Index");
         }
     }
 }

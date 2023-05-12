@@ -1,6 +1,32 @@
-﻿
+﻿@model CQRSAkademiPlusPostgre.CQRSPattern.Commands.UpdateEmployeeCommand
+
 @{
     Layout = null;
 }
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-
+<form method="post">
+    <br /><br />
+    <label>Personel ID</label>
+    <input type="text" class="form-control" asp-for="EmployeeID" />
+    <br />
+    <label>Personel Adı</label>
+    <input type="text" class="form-control" asp-for="EmployeeName" />
+    <br />
+    <label>Personel Soyadı</label>
+    <input type="text" class="form-control" asp-for="EmployeeSurname" />
+    <br />
+    <label>Personel Yaş</label>
+    <input type="text" class="form-control" asp-for="EmployeeAge" />
+    <br />
+    <label>Personel Maaş</label>
+    <input type="text" class="form-control" asp-for="EmployeeSalary" />
+    <br />
+    <label>Personel Şehir</label>
+    <input type="text" class="form-control" asp-for="EmployeeCity" />
+    <br />
+    <label>Personel Unvan</label>
+    <input type="text" class="form-control" asp-for="EmployeeTitle" />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>

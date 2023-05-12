@@ -20,6 +20,7 @@ builder.Services.AddScoped<GetProductByIDQueryHandler>();
 builder.Services.AddScoped<CreateProductCommandHandler>();
 builder.Services.AddScoped<RemoveProductCommandHandler>();
 builder.Services.AddScoped<GetProductUpdateByIDQueryHandler>();
+builder.Services.AddScoped<UpdateEmployeeCommandHandler>();
 
 
 var app = builder.Build();
